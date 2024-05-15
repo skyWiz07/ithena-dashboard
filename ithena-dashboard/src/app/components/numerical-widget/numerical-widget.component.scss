@@ -1,3 +1,17 @@
 .simple-widget {
     height: 300px;
+    align-content: center;
+    .value {
+        font-weight: 500;
+        font-size:30px;
+        line-height: 32px;
+    }
+    .calculated {
+        color: green;
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .analysis {
+        font-size: 12px;
+    }
 }

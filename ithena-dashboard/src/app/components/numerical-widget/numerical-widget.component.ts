@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./numerical-widget.component.scss']
 })
 export class NumericalWidgetComponent {
-
+value = '55,345';
+calculated = '25%';
+analysis = '25% growth';
 }
