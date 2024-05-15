@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MrrService } from 'src/app/components/services/mrr.service';
-import { MtrService } from 'src/app/components/services/mtr.service';
-import { ViewsService } from 'src/app/components/services/views.service';
+import { MrrService } from 'src/app/services/mrr.service';
+import { MtrService } from 'src/app/services/mtr.service';
+import { ViewsService } from 'src/app/services/views.service';
 
 @Component({
   selector: 'app-dashboard',
