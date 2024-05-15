@@ -1,0 +1,51 @@
+<div class="dashboard-wrapper">
+    <h1>Executive Dashboard</h1>
+    <div class="date-picker-wrapper"><app-card [title]="'Date Range'">
+            <div class="date-picker">
+                <mat-form-field>
+                    <!-- <mat-label>Enter a date range</mat-label> -->
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date">
+                        <input matEndDate placeholder="End date">
+                    </mat-date-range-input>
+                    <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+        </app-card></div>
+    <div class="row-1">
+        <div class="cell-1">
+            <app-card [title]="'New Wins'"><app-numerical-widget>
+                    <div class="simple-widget">55,545</div>
+                </app-numerical-widget></app-card>
+        </div>
+        <div class="cell-2">
+            <app-card [title]="'Trial Win Rate'"><app-numerical-widget>
+                    <div class="simple-widget">55,545</div>
+                </app-numerical-widget></app-card>
+        </div>
+        <div class="cell-3">
+            <app-card [title]="'MRR'"><app-numerical-widget>
+                    <div class="simple-widget">55,545</div>
+                </app-numerical-widget></app-card>
+        </div>
+        <div class="cell-4">
+            <app-card [title]="'Page Views'">
+                <app-doughnut-chart></app-doughnut-chart>
+            </app-card>
+        </div>
+    </div>
+    <div class="row-2">
+        <div class="cell-1">
+            <app-card [title]="'MRR Stats by Country'">
+                <app-bubble-chart></app-bubble-chart>
+            </app-card>
+        </div>
+        <div class="cell-2">
+            <app-card [title]="'MTR'">
+                <app-bar-chart></app-bar-chart>
+            </app-card>
+        </div>
+    </div>
+</div>
