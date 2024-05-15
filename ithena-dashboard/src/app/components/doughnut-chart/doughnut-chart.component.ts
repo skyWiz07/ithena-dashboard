@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Chart } from 'chart.js/auto';
 
 @Component({
@@ -6,7 +12,9 @@ import { Chart } from 'chart.js/auto';
   templateUrl: './doughnut-chart.component.html',
   styleUrls: ['./doughnut-chart.component.scss'],
 })
-export class DoughnutChartComponent {
+export class DoughnutChartComponent implements OnInit, OnChanges {
+  @Input('datasets') datasets = [];
+
   title = 'ng-chart';
   doughnutChart: any = [];
 
@@ -16,17 +24,24 @@ export class DoughnutChartComponent {
     this.createChart();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if ('datasets' in changes) {
+      this.datasets = changes['datasets']?.currentValue || [];
+      this.updateChart();
+    }
+  }
+
+  private updateChart() {
+    this.doughnutChart.data.datasets = this.datasets;
+    this.doughnutChart.update();
+  }
+
   private createChart() {
     this.doughnutChart = new Chart('doughnut-chart-canvas', {
       type: 'doughnut',
       data: {
         labels: ['Organic Search', 'Direct', 'Referral'],
-        datasets: [
-          {
-            data: [300, 50, 100],
-            backgroundColor: ['#82B16E', '#F5C85D', '#7899CB'],
-          },
-        ],
+        datasets: this.datasets,
       },
       options: {
         plugins: {

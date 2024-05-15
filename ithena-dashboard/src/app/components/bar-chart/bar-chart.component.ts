@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { Chart } from 'chart.js/auto';
 import { barChartDataList } from './bar-chart';
 
@@ -8,6 +8,8 @@ import { barChartDataList } from './bar-chart';
   styleUrls: ['./bar-chart.component.scss'],
 })
 export class BarChartComponent {
+  @Input('datasets') datasets = [];
+
   title = 'ng-chart';
   barChart: any = [];
 
@@ -15,6 +17,18 @@ export class BarChartComponent {
 
   ngOnInit() {
     this.createChart();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if ('datasets' in changes) {
+      this.datasets = changes['datasets']?.currentValue || [];
+      this.updateChart();
+    }
+  }
+
+  private updateChart() {
+    this.barChart.data.datasets = this.datasets;
+    this.barChart.update();
   }
 
   private createChart() {
@@ -30,29 +44,7 @@ export class BarChartComponent {
           'Sep-Oct',
           'Nov-Dec',
         ],
-        datasets: [
-          {
-            // label: 'MRR',
-            data: barChartDataList[0],
-            borderWidth: 1,
-            barThickness: 35,
-            backgroundColor: '#7899CB',
-          },
-          {
-            // label: 'MRR',
-            data: barChartDataList[1],
-            borderWidth: 1,
-            barThickness: 35,
-            backgroundColor: '#F1A445',
-          },
-          {
-            // label: 'MRR',
-            data: barChartDataList[2],
-            borderWidth: 1,
-            barThickness: 35,
-            backgroundColor: '#F5C85D',
-          },
-        ],
+        datasets: this.datasets,
       },
       options: {
         scales: {
