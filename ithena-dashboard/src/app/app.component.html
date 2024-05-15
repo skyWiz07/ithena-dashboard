@@ -10,30 +10,39 @@
   </div>
 </div> -->
 
-<div class="layout">
+<!-- <div class="dashboard-wrapper">
+  <h1>Executive Dashboard</h1>
+  <div class="date-picker-wrapper"><app-card [title]="'Time Range'"><div class="date-picker">
+    <input type="date"/>
+  </div></app-card></div>
   <div class="row-1">
     <div class="cell-1">
+      <app-card [title]="'Title'"><app-numerical-widget><div class="simple-widget">55,545</div></app-numerical-widget></app-card>
     </div>
     <div class="cell-2">
+      <app-card [title]="'Third Rate'"><app-numerical-widget><div class="simple-widget">55,545</div></app-numerical-widget></app-card>
     </div>
     <div class="cell-3">
+      <app-card [title]="'Title'"><app-numerical-widget><div class="simple-widget">55,545</div></app-numerical-widget></app-card>
     </div>
     <div class="cell-4">
-      <app-card>
+      <app-card [title]="'Page Views'">
         <app-doughnut-chart></app-doughnut-chart>
       </app-card>
     </div>
   </div>
   <div class="row-2">
     <div class="cell-1">
-      <app-card>
+      <app-card [title]="'Title'">
         <app-bubble-chart></app-bubble-chart>
       </app-card>
     </div>
     <div class="cell-2">
-      <app-card>
+      <app-card [title]="'MTR'">
         <app-bar-chart></app-bar-chart>
       </app-card>
     </div>
   </div>
-</div>
+</div> -->
+
+<app-dashboard></app-dashboard>
