@@ -1,5 +1,5 @@
 <div class="simple-widget">
-    <div class="value">{{value}}</div>
-    <div class="calculated">{{calculated}}</div>
+    <div class="value"><span *ngIf="prefix">{{prefix}}</span>{{value}}<span *ngIf="suffix">{{suffix}}</span></div>
+    <div class="calculated"><i class="material-icons">arrow_upward</i><span>{{calculated}}</span></div>
     <div class="analysis">{{analysis}}</div>
 </div>

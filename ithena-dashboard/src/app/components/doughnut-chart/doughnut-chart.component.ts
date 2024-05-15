@@ -15,7 +15,6 @@ import { Chart } from 'chart.js/auto';
 export class DoughnutChartComponent implements OnInit, OnChanges {
   @Input('datasets') datasets = [];
 
-  title = 'ng-chart';
   doughnutChart: any = [];
 
   constructor() {}
@@ -51,17 +50,6 @@ export class DoughnutChartComponent implements OnInit, OnChanges {
           tooltip: {
             enabled: false,
           },
-          // title: {
-          //   display: false,
-          //   text: 'Reported Fault Allocation',
-          //   color: '#D6001C',
-          //   align: 'start',
-          //   font: {
-          //     family: 'AvenirNextLTW01-Regular',
-          //     size: 16,
-          //     style: 'normal',
-          //   },
-          // },
         },
       },
     });

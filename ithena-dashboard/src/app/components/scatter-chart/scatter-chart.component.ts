@@ -7,7 +7,6 @@ import { Chart } from 'chart.js/auto';
   styleUrls: ['./scatter-chart.component.scss'],
 })
 export class ScatterChartComponent {
-  title = 'ng-chart';
   scatterChart: any = [];
 
   constructor() {}

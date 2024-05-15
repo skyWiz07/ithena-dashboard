@@ -15,7 +15,6 @@ import { Chart } from 'chart.js/auto';
 export class BubbleChartComponent implements OnInit, OnChanges {
   @Input() datasets = [];
 
-  title = 'ng-chart';
   bubbleChart: any = [];
 
   constructor() {}

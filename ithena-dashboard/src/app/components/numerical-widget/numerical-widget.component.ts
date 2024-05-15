@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-numerical-widget',
@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./numerical-widget.component.scss']
 })
 export class NumericalWidgetComponent {
+  @Input() prefix: string | null = null;
+  @Input() suffix: string | null = null;
 value = '55,345';
 calculated = '25%';
-analysis = '25% growth';
+analysis = 'vs previous 30 days';
 }

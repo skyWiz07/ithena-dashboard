@@ -10,7 +10,6 @@ import { barChartDataList } from './bar-chart';
 export class BarChartComponent {
   @Input('datasets') datasets = [];
 
-  title = 'ng-chart';
   barChart: any = [];
 
   constructor() {}
@@ -35,7 +34,6 @@ export class BarChartComponent {
   private createChart() {
     this.barChart = new Chart('bar-chart-canvas', {
       type: 'bar',
-
       data: {
         labels: [
           'Jan-Feb',
