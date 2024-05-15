@@ -1,13 +1,17 @@
-/*card.component.css*/
-
 .dashboard-card {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding:20px;
+  display: flex;
+  flex-direction: column;
 
   .card-title {
     font-weight: bold;
+  }
+
+  .dashboard-card-content{
+    flex: 1 1;
   }
 }
 
